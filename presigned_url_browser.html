@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--&#91;if lt IE 9&#93;>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<!&#91;endif&#93;-->
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<script type="text/javascript" src="s3.js"></script>
+
+<body>
+
+<form name="s3BucketList">
+  バケット名:<input type="text" name="bucketname" size="15" value="kohei-no-bucket">
+<input type="button" name="button1" value="ファイル一覧" onclick="s3ListObject(document.s3BucketList.bucketname.value);">
+</form>
+<br>
+
+<div id="status"></div>
+<ul id="objects"></ul>
+<br>
+
+<!-- -->
+<form name="s3Form">
+  バケット:<input type="text" name="bucket" size="15" value="kohei-no-bucket">
+  キー:<input type="text" name="object" size="15" value="ceresso.png">
+  有効期限:<input type="text" name="expire" size="15" value="60">
+</form>
+<input type="button" name="button1" value="期限付きURL発行" onclick="s3GetUrl(document.s3Form.bucket.value, document.s3Form.object.value);">
+<br>
+
+
+</body>
+</html>
