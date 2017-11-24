@@ -1,3 +1,9 @@
+/*
+ =============================
+ Copyright © 2017 kohei YAMADA
+ =============================
+*/
+
 function awsConfig(accessKeyId, secretAccessKey, region){
   AWS.config.update({
       "accessKeyId": "xxxxxxxxxxx",
